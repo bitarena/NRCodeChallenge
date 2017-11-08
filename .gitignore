@@ -1,0 +1,24 @@
+
+*.csproj.user
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+obj
+bin
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+*.pdb
+
