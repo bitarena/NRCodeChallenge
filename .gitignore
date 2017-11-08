@@ -9,6 +9,7 @@
 
 obj
 bin
+.vs
 
 # Compiled Dynamic libraries
 *.so

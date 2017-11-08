@@ -17,20 +17,14 @@ namespace NRCodeChallenge.WebApi
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        //public void ConfigureServices(IServiceCollection services)
-        //{
-        //    services.AddMvc();
-        //}
-
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
 
             var containerOptions = new ContainerOptions { EnablePropertyInjection = false };
             var container = new ServiceContainer(containerOptions);
+            container.ScopeManagerProvider = new PerLogicalCallContextScopeManagerProvider();
 
-            // container.Register<INRCodeChallengeAppService, NRCodeChallengeAppService>(new PerRequestLifeTime());
             ServiceLibrary.IoC.IoCRegister.Register(container);
             DataAccess.RestClient.IoC.IoCRegister.Register(container);
 
