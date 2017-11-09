@@ -18,7 +18,7 @@ namespace NRCodeChallenge.DataAccess.RestClient.Client
 
         public async Task<T> GetAsync<T>(string requestUrl)
         {
-            using (HttpResponseMessage response = await client.GetAsync(requestUrl))
+            using (var response = await client.GetAsync(requestUrl))
             {
                 if (response.IsSuccessStatusCode)
                 {
